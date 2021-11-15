@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Movie from "../views/Movie";
+import Actor from "../views/Actor";
+import ActorDetail from "../views/ActorDetail";
 
 Vue.use(VueRouter)
 
@@ -11,19 +14,32 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
+    path: '/movie/:id',
+    name: 'Movie',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+    component: Movie
+  },
+  {
+    path: '/actor',
+    name: 'Actor',
+    component: Actor
+  },
+  {
+    path: '/actor/:id',
+    name: 'Actor Detail',
+    component: ActorDetail
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior() {
+    document.getElementById('app').scrollIntoView();
+  }
 })
 
 export default router

@@ -1,0 +1,17 @@
+module.exports = {
+    chainWebpack: (config) => {
+        const svgRule = config.module.rule('svg');
+
+        svgRule.uses.clear();
+
+        svgRule
+            .use('babel-loader')
+            .loader('babel-loader')
+            .end()
+            .use('vue-svg-loader')
+            .loader('vue-svg-loader');
+    },
+    publicPath: process.env.NODE_ENV === 'production'
+        ? '/vuemovie/' // Thay tên repository của các bạn vào đây nhé
+        : '/'
+};
