@@ -12,6 +12,6 @@ module.exports = {
             .loader('vue-svg-loader');
     },
     publicPath: process.env.NODE_ENV === 'production'
-        ? '/vuemovie/' // Thay tên repository của các bạn vào đây nhé
+        ? '/vuemovie/'
         : '/'
 };
