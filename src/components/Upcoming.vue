@@ -1,6 +1,6 @@
 <template>
   <div class="container mx-auto">
-    <h2 class="mt-5 px-4 text-lg font-semibold text-left text-yellow-500 uppercase">Upcoming movies</h2>
+    <h2 class="mt-5 px-4 text-lg font-semibold text-left text-yellow-500 uppercase">Upcoming movies test</h2>
     <Carousel3d
         :controls-visible="true"
         :clickable ="false"
